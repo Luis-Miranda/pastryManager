@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: pastry-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pastrymanager
+    ports:
+      - "5432:5432"
+    volumes:
+      - pastry_pgdata:/var/lib/postgresql/data
+
+volumes:
+  pastry_pgdata:
